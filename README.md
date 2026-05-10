@@ -14,6 +14,7 @@ _Auto-generated — do not edit this section manually._
 | | **[Dss2021](https://cosimameyer.github.io/talks/slides/dss2021/)** |
 | | **[Git Wit](https://cosimameyer.github.io/talks/slides/git-wit/)** |
 | | **[Interactive Science](https://cosimameyer.github.io/talks/slides/interactive-science/)** |
+| | **[NLP Rladies Tunis](https://cosimameyer.github.io/talks/slides/nlp-rladies-tunis/)** |
 | | **[Overviewr](https://cosimameyer.github.io/talks/slides/overviewR/)** |
 | | **[Ram Shiny](https://cosimameyer.github.io/talks/slides/ram-shiny/)** |
 | | **[Research Plus](https://cosimameyer.github.io/talks/slides/research-plus/)** |
