@@ -14,17 +14,24 @@ def to_title(name):
         for i, p in enumerate(parts)
     )
 
-talks = sorted(
-    d for d in os.listdir(SLIDES_DIR)
-    if os.path.isdir(os.path.join(SLIDES_DIR, d))
-    and not d.startswith(".")
-    and os.path.exists(os.path.join(SLIDES_DIR, d, "index.html"))
-)
+def find_talks(slides_dir):
+    entries = []
+    for d in sorted(os.listdir(slides_dir)):
+        path = os.path.join(slides_dir, d)
+        if not os.path.isdir(path) or d.startswith("."):
+            continue
+        if os.path.exists(os.path.join(path, "index.html")):
+            entries.append((d, "index"))
+        elif os.path.exists(os.path.join(path, "talk.html")):
+            entries.append((d, "talk"))
+    return entries
+
+talks = find_talks(SLIDES_DIR)
 
 rows = []
-for t in talks:
+for t, html_type in talks:
     title = to_title(t)
-    url = f"{BASE_URL}/{t}/"
+    url = f"{BASE_URL}/{t}/" if html_type == "index" else f"{BASE_URL}/{t}/talk.html"
     thumb_rel = f"slides/{t}/assets/thumbnail.jpeg"
     thumb_abs = os.path.join(SLIDES_DIR, t, "assets", "thumbnail.jpeg")
     if os.path.exists(thumb_abs):
