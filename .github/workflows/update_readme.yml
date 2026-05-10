@@ -15,16 +15,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
 
       - name: Regenerate talks list
         run: python3 scripts/update_readme.py
 
-      - name: Commit if changed
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git diff --quiet README.md || (
             git add README.md &&
-            git commit -m "docs: update talks list [skip ci]"
+            git commit -m "docs: update talks list [skip ci]" &&
+            git push
           )
-          git push
