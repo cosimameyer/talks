@@ -12,6 +12,7 @@ _Auto-generated — do not edit this section manually._
 | | **[Correlcon](https://cosimameyer.github.io/talks/slides/correlcon/)** |
 | | **[Correlcon2021](https://cosimameyer.github.io/talks/slides/correlcon2021/)** |
 | | **[Dss2021](https://cosimameyer.github.io/talks/slides/dss2021/)** |
+| | **[Git Wit](https://cosimameyer.github.io/talks/slides/git-wit/)** |
 | | **[Overviewr](https://cosimameyer.github.io/talks/slides/overviewR/)** |
 | | **[Ram Shiny](https://cosimameyer.github.io/talks/slides/ram-shiny/)** |
 | | **[Research Plus](https://cosimameyer.github.io/talks/slides/research-plus/)** |
