@@ -1,3 +1,4 @@
+import json
 import os
 import re
 
@@ -13,6 +14,15 @@ def to_title(name):
         else p
         for i, p in enumerate(parts)
     )
+
+def get_title(folder_path, folder_name):
+    meta = os.path.join(folder_path, "meta.json")
+    if os.path.exists(meta):
+        with open(meta) as f:
+            data = json.load(f)
+        if "title" in data:
+            return data["title"]
+    return to_title(folder_name)
 
 def find_talks(slides_dir):
     entries = []
@@ -30,7 +40,7 @@ talks = find_talks(SLIDES_DIR)
 
 rows = []
 for t, html_type in talks:
-    title = to_title(t)
+    title = get_title(os.path.join(SLIDES_DIR, t), t)
     url = f"{BASE_URL}/{t}/" if html_type == "index" else f"{BASE_URL}/{t}/talk.html"
     thumb_rel = f"slides/{t}/assets/thumbnail.jpeg"
     thumb_abs = os.path.join(SLIDES_DIR, t, "assets", "thumbnail.jpeg")
